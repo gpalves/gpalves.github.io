@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 77.5%;
+    margin: 0;
+    background-image: linear-gradient(135deg, #faf3dc, #fceec0);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#terminal {
+    background-image: linear-gradient(#1e1e1e, #1c1c1c);
+    margin: 5%;
+    border-radius: 10px;
+    height: 77.5vh;
+}
+
+#tabs {
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(#252526, #2a2a2b);
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+}
+
+#selected {
+    background-color: #1e1e1e;
+    border-radius: 10px 0px 0px 0px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1% 3%;
+    height: 100%;
+}
+
+.tab {
+    background-color: #393b3b;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1% 3%;
+    height: 100%;
+}
+
+.tabseparator {
+    width: 1px;
+    background-color: #ffffff;
+}
+
+.prompt {
+    white-space: nowrap;
+}
+
+#typing {
+    display: inline;
+    white-space: nowrap;
+}
+
+#typing h1 {
+    display: inline;
+    white-space: nowrap;
+    border-right: 1em solid transparent;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #fefefe;
+    animation: 
+        blinking-cursor .5s step-end infinite;
+}
+
+p {
+    display: inline;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #fefefe;
+}
+
+.textarea {
+    margin: 20px;
+    letter-spacing: 0.06em;
+}
+
+@keyframes blinking-cursor {
+    from, to { border-color: orange }
+    50% { border-color: transparent }
+  }
