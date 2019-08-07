@@ -76,6 +76,15 @@ body {
         blinking-cursor .5s step-end infinite;
 }
 
+h1 {
+    display: inline;
+    white-space: nowrap;
+    border-right: 1em solid transparent;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #fefefe;
+}
+
 p {
     display: inline;
     font-family: 'Courier New', Courier, monospace;
