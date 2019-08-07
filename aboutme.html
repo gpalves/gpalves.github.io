@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body onload="typeWriter()">
     <div id="terminal">
         <nav id="tabs">
                 <a href="http://gpalv.es" id="hometab">Home</a> <div class="tabseparator"></div>
@@ -14,15 +14,49 @@
                 <a href="http://gpalv.es/resume.pdf" class="tab">Resume</a><div class="tabseparator"></div>
         </nav>
         <div class="textarea">
-            <p id="prompt">root@galv.es $ </p><div id="typing"><h1>less aboutme.txt</h1></div><br><br>
-            <p>Hi! I'm Guilherme Alves. I'm a student at the Colorado School of Mines, and my major is Computer Science with a specialty in Robotics and Intelligent Systems.
-                I hope to graduate in December 2020.
+            <p id="prompt">root@galv.es $ </p><h1 id="prompt"></h1><br><br>
+            <p id="responseP1">
             </p><br><br>
-            <p>
-                I have always loved solving problems, so programming was pretty natural to me, and I stuck with it
-                throughout High School and now in College. Once I graduate, my goal is to help people (Yes, that is a 
-                pretty broad goal, I know).
+            <p id="responseP2">
             </p>
+            <script>
+                var cmdText = "less aboutme.txt";
+                var outputTextParagraph1 = "Hi! I'm Guilherme Alves. I'm a student at the Colorado School of Mines, and my major is Computer Science with a specialty in Robotics and Intelligent Systems. I hope to graduate in December 2020.";
+                var outputTextParagraph2 = "I have always loved solving problems, so programming was pretty natural to me, and I stuck with it throughout High School and now in College. Once I graduate, my goal is to help people (Yes, that is a pretty broad goal, I know).";
+                var i = 0;
+                var speed = 100;
+                var responseSpeed = 10;
+
+                function typeWriter(){
+                    if(i < cmdText.length){
+                        document.getElementById("prompt").innerHTML += cmdText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    } else {
+                        i = 0;
+                        responseTypeWriter();
+                    }
+                }
+
+                function responseTypeWriter(){
+                    if(i < outputTextParagraph1.length){
+                        document.getElementById("responseP1").innerHTML += outputTextParagraph1.charAt(i);
+                        i++;
+                        setTimeout(responseTypeWriter, responseSpeed);
+                    } else {
+                        i = 0;
+                        responseTypeWriterParagraph2();
+                    }
+                }
+
+                function responseTypeWriterParagraph2(){
+                    if(i < outputTextParagraph2.length){
+                        document.getElementById("responseP2").innerHTML += outputTextParagraph2.charAt(i);
+                        i++;
+                        setTimeout(responseTypeWriterParagraph2, responseSpeed);
+                    }
+                }
+            </script>
         </div>
     </div>
 </body>

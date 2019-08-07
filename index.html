@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body onload="typeWriter()">
     <div id="terminal">
         <nav id="tabs">
                 <a href="http://gpalv.es" id="selected">Home</a> <div class="tabseparator"></div>
@@ -14,9 +14,34 @@
                 <a href="http://gpalv.es/resume.pdf" class="tab">Resume</a><div class="tabseparator"></div>
         </nav>
         <div class="textarea">
-            <p id="prompt">root@galv.es $ </p><div id="typing"><h1>less home.txt</h1></div><br><br>
-            <p>Hello there! My name is Guilherme Alves. Welcome to my website!</p><br><br>
-            <p>To learn more about me, check out the various tabs across the top of this terminal window!</p>
+            <p id="prompt">root@galv.es $ </p><h1 id="type"></h1><br><br>
+            <p id="response"></p>
+            <script>
+                var cmdText = "less home.txt";
+                var outputText = "Hello there! My name is Guilherme Alves. Welcome to my website! To learn more about me, check out the various tabs across the top of this terminal window!";
+                var i = 0;
+                var speed = 100;
+                var responseSpeed = 10;
+
+                function typeWriter(){
+                    if(i < cmdText.length){
+                        document.getElementById("prompt").innerHTML += cmdText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    } else {
+                        i = 0;
+                        responseTypeWriter();
+                    }
+                }
+
+                function responseTypeWriter(){
+                    if(i < outputText.length){
+                        document.getElementById("response").innerHTML += outputText.charAt(i);
+                        i++;
+                        setTimeout(responseTypeWriter, responseSpeed);
+                    }
+                }
+            </script>
         </div>
     </div>
 </body>
