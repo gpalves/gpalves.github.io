@@ -14,7 +14,7 @@
                 <a href="http://gpalv.es/resume.pdf" class="tab">Resume</a><div class="tabseparator"></div>
         </nav>
         <div class="textarea">
-            <p id="prompt">root@galv.es $ </p><h1 id="prompt"></h1><br><br>
+            <p id="prompt">root@galv.es $ </p><h1 id="type"></h1><br><br>
             <p id="responseP1">
             </p><br><br>
             <p id="responseP2">
@@ -29,7 +29,7 @@
 
                 function typeWriter(){
                     if(i < cmdText.length){
-                        document.getElementById("prompt").innerHTML += cmdText.charAt(i);
+                        document.getElementById("type").innerHTML += cmdText.charAt(i);
                         i++;
                         setTimeout(typeWriter, speed);
                     } else {

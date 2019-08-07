@@ -56,7 +56,13 @@ body {
     background-color: #ffffff;
 }
 
-.prompt {
+#userPrompt {
+    color: #25baf5;
+    white-space: nowrap;
+}
+
+#prompt {
+    color: #25baf5;    
     white-space: nowrap;
 }
 
